@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 
 class Product extends Component {
+    constructor(props) {
+       super(props);
+    }
+    
     render() {
+        const { currentValue } = this.props;
         return (
             <div>
-                <h2>Product</h2>
+                <h2>Product { currentValue } </h2>
             </div>
         );
     }

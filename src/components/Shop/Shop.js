@@ -7,17 +7,29 @@ class Shop extends Component {
         this.state = {
             currentValue: ''
         };
+        this.currentValue = this.currentValue.bind(this)
       }
       currentValue = (e) => {
-          var item = e.target.getAttribute('just-check');
+        var item = e.target.getAttribute('just-check');
         this.setState({
             currentValue: item
         });
-        console.log(item);
+        // this.setState = (prevState, currStten) => {
+
+        //   console.log("shop =====", e.target.getAttribute('just-check'));
+        // };
+
+        // const { name, value } = e.target;
+        // this.setState({
+        //   currentValue: value
+        // });
+        // console.log(item);
       }
       render() {
+        var currentValue = this.state.currentValue;
         return (
           <div>
+            <Product currentValue={currentValue}></Product>
             <li
               type="button" just-check = "Hello"
               onMouseEnter={this.currentValue}
