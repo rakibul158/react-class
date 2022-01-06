@@ -7,9 +7,9 @@ class Shop extends Component {
         this.state = {
             currentValue: ''
         };
-        this.currentValue = this.currentValue.bind(this)
+        this.handleHoverItem = this.handleHoverItem.bind(this)
       }
-      currentValue = (e) => {
+      handleHoverItem = (e) => {
         var item = e.target.getAttribute('just-check');
         this.setState({
             currentValue: item
@@ -32,7 +32,7 @@ class Shop extends Component {
             <Product currentValue={currentValue}></Product>
             <li
               type="button" just-check = "Hello"
-              onMouseEnter={this.currentValue}
+              onMouseEnter={this.handleHoverItem}
             >Value</li>
           </div>
         );
