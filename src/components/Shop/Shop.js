@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Parent from '../Parent/Parent';
 import Product from '../Product/Product';
 
 class Shop extends Component {
@@ -14,24 +15,16 @@ class Shop extends Component {
         this.setState({
             currentValue: item
         });
-        // this.setState = (prevState, currStten) => {
-
-        //   console.log("shop =====", e.target.getAttribute('just-check'));
-        // };
-
-        // const { name, value } = e.target;
-        // this.setState({
-        //   currentValue: value
-        // });
-        // console.log(item);
       }
+      
       render() {
-        var currentValue = this.state.currentValue;
+        var { currentValue } = this.state;
         return (
           <div>
+            <Parent></Parent>
             <Product currentValue={currentValue}></Product>
             <li
-              type="button" just-check = "Hello"
+              type="button" just-check = "Wow! Hover Me."
               onMouseEnter={this.handleHoverItem}
             >Value</li>
           </div>
