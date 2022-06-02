@@ -55,8 +55,8 @@ class Shop extends Component {
         return (
           <div>
             {
-              users.map(user => 
-                <p>{ user.name}</p>
+              users.map((user,key) => 
+                <p key={key}>{ user.name}</p>
              )
             }
             <Parent></Parent>
