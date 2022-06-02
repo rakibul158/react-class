@@ -5,8 +5,15 @@ class Parent extends Component {
         super(props);
         this.state = {
             currentValue: '',
+            isloding: false,
             name: '',
-            email: ''
+            email: '', 
+            userInfo: [
+                {name: 'Rakib Hasan', age: 25},
+                {name: 'Rakibul Hasan', age: 23},
+                {name: 'Hasan Rakibul', age: 24},
+                {name: 'Hasan Rakib', age: 25}
+            ]
         };
         this.handleHoverItem = this.handleHoverItem.bind(this);
         this.yourName = this.yourName.bind(this);
@@ -68,13 +75,24 @@ class Parent extends Component {
     }
 
     showFormData(){
-        var { name, email } = this.state;
-        return(
-            <>
-            <p>Name: {name}</p>
-            <p>Email: {email}</p>
-            </>
-        )
+        var { name, email, isloding } = this.state;
+        if(name === '' && email === '')
+        {
+            return isloding;
+        } else{
+            return(
+                <>
+                <p>Name: {name}</p>
+                <p>Email: {email}</p>
+                </>
+            )
+        }
+    }
+
+    renderSearch() {
+        const { userInfo } = this.state;
+
+        console.log('Coming or Not ========>',userInfo);
     }
 
     render() {
@@ -83,6 +101,7 @@ class Parent extends Component {
                 { this.header() }
                 { this.submitForm() }
                 { this.showFormData() }
+                { this.renderSearch() }
             </div>
         );
     }
