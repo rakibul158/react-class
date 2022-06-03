@@ -90,9 +90,9 @@ class Parent extends Component {
     }
 
     renderSearch() {
-        const { userInfo } = this.state;
+        // const { userInfo } = this.state;
 
-        console.log('Coming or Not ========>',userInfo);
+        // console.log('Coming or Not ========>',userInfo);
     }
 
     render() {
